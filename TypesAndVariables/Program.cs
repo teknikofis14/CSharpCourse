@@ -24,6 +24,9 @@ namespace TypesAndVariables
             bool condition2 = false;
             char character = 'A';
             string city = "Karabük";
+            var number10 = 10;  //var ile ilk atamayı sayısal değer atadığım için number10 integer oldu.
+            number10 = 'A';  //number10 değeri integer olduğu için A atadığımda 65 değerini alır.
+            //number10 = "A";   Çift tırnak ile metinsel ifade atamaya çalıştığımızda uygulama hata verir.
 
             Console.WriteLine("VERİ TİPLERİ");
             Console.WriteLine("------------");
