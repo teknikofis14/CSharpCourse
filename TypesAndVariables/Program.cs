@@ -50,8 +50,30 @@ namespace TypesAndVariables
             Console.WriteLine("Veri Tiplerini Sayısal İfdeye Dönüştürme");
             Console.WriteLine("----------------------------------------");
             Console.WriteLine("Char veri tipindeki " +character+ " karakterini sayısal ifadeye dönüştürdüğümüzde {0} değeri çıkar.", (int)character); //char değerini int ile sayısal ifadeye dönüştürdük
+            Console.WriteLine("enum Days ile belirlediğim {0} sabitimi sayısal ifadeye dönüştürdüğümüzde {1} değeri çıkar. Çünkü {2} değeri {3}. değerdir.", Days.Friday, (int)Days.Friday, Days.Monday, (int)Days.Monday); //enum days ile belirlediğim sabitimi int ile sayısal ifadeye dönüştürdük
+            Console.WriteLine("enum Days1 ile belirlediğim {0} sabitimi sayısal ifadeye dönüştürdüğümüzde {1} değeri çıkar. Çünkü {2} değerine {3}. değeri atadım.", Days1.Friday, (int)Days1.Friday, Days1.Monday, (int)Days1.Monday); //enum days ile belirlediğim sabitimi int ile sayısal ifadeye dönüştürdük
+
+
+            Console.WriteLine(" ");
+            Console.WriteLine("Sabitleri Tanımlama");
+            Console.WriteLine("-------------------");
+            Console.WriteLine("enum ile {0}, {1} gibi haftanın günleri belirlenebilir. Bu sayede tekrar tanımlama yapılmasına gerek kalmaz. enum class program dışına yazılır.", Days.Monday, Days.Tuesday);
+            
+
+
+
             Console.ReadLine();
             
         }
+    }
+    // Sabitleri tanımlamak için enum kullanılır.
+    enum Days
+    {
+        Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+    }
+
+    enum Days1
+    {
+        Monday=1, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
     }
 }
