@@ -20,6 +20,7 @@ namespace TypesAndVariables
             Console.WriteLine("Integer veri tipi {0} ile {1} arasında değer alır ve bellekte 32 bit yer kaplar.", number3, number4);
             Console.WriteLine("Lont veri tipi {0} ile {1} arasında değer alır ve bellekte 64 bit yer kaplar.", number5, number6);
             Console.ReadLine();
+            
         }
     }
 }
