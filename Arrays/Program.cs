@@ -47,6 +47,7 @@ namespace Arrays
 
 
             //Çok boyutlu diziler
+            //, ifadesi dizinin boyunutunu tanımlar.
             //Türkiye'nin yedi bölgesi ve her bölgesine ait 3 şehir olan bir dizi yapalım.
             //7 satır ve 3 sütunlu bir dizi oluşturur.
             string[,] regions = new string[7, 3]
