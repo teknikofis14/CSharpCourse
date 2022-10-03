@@ -49,12 +49,19 @@ namespace Loops
 
 
 
-            Console.WriteLine("ÖRNEK UYGULAMA - Konsoldan girilen bir sayının asal olup olmadığı");
-            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine("ÖRNEK UYGULAMA - Bir sayının asal olup olmadığı");
+            Console.WriteLine("-----------------------------------------------");
 
             //Örnek uygulama
             //IsPrimeNumber Metodunu çağırır.
-            IsPrimeNumber();
+            if (IsPrimeNumber(7))
+            {
+                Console.WriteLine("This is a prime number");
+            }
+            else
+            {
+                Console.WriteLine("This is not a prime number");
+            }
 
 
 
@@ -66,13 +73,24 @@ namespace Loops
 
 
 
-        private static bool IsPrimeNumber()
+        private static bool IsPrimeNumber(int number)
         {
             //Örnek Uygulama
             //Konsoldan girilen bir sayının asal olup olmadığını bulan uygulama
             //IsPrimeNumber metodu true/false döndüreceği için bool olarak tanımlanmıştır.
             //
+            bool result = true;
+            for (int i = 2; i < number-1; i++)
+            {
+                if (number%i==0)
+                {
+                    result = false;
 
+                    //result false ise for döngüsünü durdurmak için i değerini sayıya atadık.
+                    i = number;
+                }
+            }
+            return result;
         }
 
 
