@@ -11,7 +11,15 @@ namespace Interfaces
         static void Main(string[] args)
         {
 
-            InterfacesIntro();
+            //InterfacesIntro();
+
+            //interface kendi başına new yapılamaz.
+            //IPerson person = new IPerson();   //Hata verir.
+
+
+            CustomerManager customerManager = new CustomerManager();
+            customerManager.Add(new SqlServerCustomarDal());
+
 
 
 
@@ -61,6 +69,8 @@ namespace Interfaces
             string FirstName { get; set; }
             string LastName { get; set; }
         }
+
+
         //Customer:IPerson eklediğimizde IPerson'da tanımlanan her şeyi class içerisinde görebiliriz.
         //IPerson interface eklenen her öğeyi public olarak class içerisine eklememiz gerekiyor
         class Customer : IPerson
@@ -72,6 +82,7 @@ namespace Interfaces
             public string Address { get; set; }
         }
 
+
         class Student : IPerson
         {
             public int Id { get; set; }
@@ -80,6 +91,17 @@ namespace Interfaces
             //Öğrencinin bölümünü interface harici olarak class içerisine ekledik.
             public string Department { get; set; }
         }
+
+
+        class Worker : IPerson
+        {
+            public int Id { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            //Öğrencinin bölümünü interface harici olarak class içerisine ekledik.
+            public string Department { get; set; }
+        }
+
 
         class PersonManager
         {
