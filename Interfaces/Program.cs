@@ -11,6 +11,17 @@ namespace Interfaces
         static void Main(string[] args)
         {
 
+            InterfacesIntro();
+
+
+
+            //Konsolun açık kalmasını sağlar.
+            Console.ReadLine();
+        }
+
+
+        private static void InterfacesIntro()
+        {
             PersonManager manager = new PersonManager();
 
             //Kısa yazım
@@ -29,6 +40,8 @@ namespace Interfaces
 
 
 
+
+
             Student student = new Student
             {
                 Id = 1,
@@ -38,11 +51,7 @@ namespace Interfaces
             };
 
             manager.Add(student);
-
-            //Konsolun açık kalmasını sağlar.
-            Console.ReadLine();
         }
-
 
         //interface soyut nesnedir. class ise somut nesnedir.
         //soyut nesneler tek başına bir anlam ifade etmez.
