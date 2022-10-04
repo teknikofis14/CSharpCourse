@@ -17,16 +17,29 @@ namespace Interfaces
             //IPerson person = new IPerson();   //Hata verir.
 
 
-            CustomerManager customerManager = new CustomerManager();
-            customerManager.Add(new SqlServerCustomarDal());
+            //Demo();
 
-
+            ICustomerDal[] customerDals = new ICustomerDal[3]
+            {
+                new SqlServerCustomarDal(),
+                new OracleCustomarDal(),
+                new MySqlCustomarDal()
+            };
+            foreach (var customarDal in customerDals)
+            {
+                customarDal.Add();
+            }
 
 
             //Konsolun açık kalmasını sağlar.
             Console.ReadLine();
         }
 
+        private static void Demo()
+        {
+            CustomerManager customerManager = new CustomerManager();
+            customerManager.Add(new OracleCustomarDal());
+        }
 
         private static void InterfacesIntro()
         {

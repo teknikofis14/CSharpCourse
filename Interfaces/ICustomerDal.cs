@@ -13,6 +13,7 @@ namespace Interfaces
         void Delete();
     }
 
+
     class SqlServerCustomarDal : ICustomerDal
     {
         public void Add()
@@ -31,6 +32,7 @@ namespace Interfaces
         }
     }
 
+
     class OracleCustomarDal : ICustomerDal
     {
         public void Add()
@@ -48,6 +50,26 @@ namespace Interfaces
             Console.WriteLine("Oracle Updated");
         }
     }
+
+
+    class MySqlCustomarDal : ICustomerDal
+    {
+        public void Add()
+        {
+            Console.WriteLine("MySql Added");
+        }
+
+        public void Delete()
+        {
+            Console.WriteLine("MySql Deleted");
+        }
+
+        public void Update()
+        {
+            Console.WriteLine("MySql Updated");
+        }
+    }
+
 
     class CustomerManager
     {
