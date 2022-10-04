@@ -11,6 +11,73 @@ namespace Interfaces
         static void Main(string[] args)
         {
 
+            PersonManager manager = new PersonManager();
+
+            //Kısa yazım
+            //manager.Add(new Customer { Id = 1, FirstName = "Nedim", LastName = "AKCA", Address = "Karabük" });
+
+
+            //Uzun yazım
+            Customer customer = new Customer
+            {
+                Id = 1,
+                FirstName = "Nedim",
+                LastName = "AKCA",
+                Address = "Karabük"
+            };
+            manager.Add(customer);
+
+
+
+            Student student = new Student
+            {
+                Id = 1,
+                FirstName = "Emre",
+                LastName = "AKCA",
+                Department = "Computer Education and Instructional Technology"
+            };
+
+            manager.Add(student);
+
+            //Konsolun açık kalmasını sağlar.
+            Console.ReadLine();
+        }
+
+
+        //interface soyut nesnedir. class ise somut nesnedir.
+        //soyut nesneler tek başına bir anlam ifade etmez.
+        interface IPerson
+        {
+            int Id { get; set; }
+            string FirstName { get; set; }
+            string LastName { get; set; }
+        }
+        //Customer:IPerson eklediğimizde IPerson'da tanımlanan her şeyi class içerisinde görebiliriz.
+        //IPerson interface eklenen her öğeyi public olarak class içerisine eklememiz gerekiyor
+        class Customer : IPerson
+        {
+            public int Id { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            //Müşterinin adresini interface harici olarak class içerisine ekledik.
+            public string Address { get; set; }
+        }
+
+        class Student : IPerson
+        {
+            public int Id { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            //Öğrencinin bölümünü interface harici olarak class içerisine ekledik.
+            public string Department { get; set; }
+        }
+
+        class PersonManager
+        {
+            public void Add(IPerson person)
+            {
+                Console.WriteLine(person.FirstName);
+            }
         }
     }
 }
