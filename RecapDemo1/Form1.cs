@@ -34,6 +34,13 @@ namespace RecapDemo1
             //this.Controls.Add(button);
 
 
+
+
+            GenerateButtons();
+        }
+
+        private void GenerateButtons()
+        {
             //buttons isimli 8 satırlı ve 8 sütunlu bir dizi tanımladık.
             Button[,] buttons = new Button[8, 8];
             //soldan ve üstten boşluk için değişken tanımladık.
@@ -66,7 +73,6 @@ namespace RecapDemo1
                 top += 50;
                 left = 0;
             }
-
         }
     }
 }
